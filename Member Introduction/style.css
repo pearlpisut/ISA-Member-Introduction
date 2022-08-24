@@ -1,0 +1,376 @@
+/**{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #808080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circle-outter{
+    width: 400px;
+    height: 400px;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}*/
+*{
+    position: relative;
+}
+
+body{
+    max-width: 960px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 70px 320px 500px 70px;
+    grid-template-rows: 90px 150px 380px;
+    grid-auto-rows: 200px;
+    grid-auto-columns: 200px;
+    grid-gap: 10px;
+}
+
+.grid-element{
+    background-color: white;
+}
+
+.prev{
+    grid-area: 1 / 1 / 4 / 2 
+}
+
+.picture{
+    grid-area: 1 / 2 / 4 / 3;
+    padding: 20px;
+}
+
+#image-glow{
+    background-color: lightblue;
+    z-index: 1;
+    width: 100%;
+    height: 90%;
+    top: -545px;
+    margin-left: -2px;
+    filter: blur(40px);
+}
+
+#description{
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 30px;
+    height: 75%;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+    display: grid;
+    align-items: center;
+    z-index: 3;
+    line-height: 25px;
+}
+
+#desc-text{
+    padding: 25px;
+}
+
+.title{
+    position: relative;
+}
+
+#title{
+    font-family: 'Fugaz One';
+    font-size: 55px;
+    text-align: center;
+    margin-top: 2%;
+    z-index: 4;
+    line-height: normal;
+}
+
+#image{
+    z-index: 3;
+    margin-left: -8px;
+    width: 100%;
+    height: 85%;
+    object-fit: cover;
+    margin-top: 15px;
+    object-position: 54% 50%;
+    border: 8px solid white;
+}
+#fullname{
+    font-weight: 800;
+    font-size: 37px;
+    margin-top: 20px;
+    margin-left: 20px;
+    letter-spacing: 1px;
+    line-height: 35px;
+    white-space: nowrap;
+}
+
+#personalinfo{
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+#nameholder{
+    z-index: 2;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 30px;
+    height: 80%;
+    width: 90%;
+    margin-left: 5%;
+}
+
+#name-glow{
+    background-color:violet;
+    z-index: 1;
+    width: 90%;
+    height: 80%;
+    margin-left: 5%;
+    margin-top: -30%;
+    filter: blur(60px);
+}
+
+#description-glow{
+    z-index: 1;
+    width: 80%;
+    height: 70%;
+    background-color: purple;
+    margin-top: -49%;
+    margin-left: 12%;
+    filter: blur(70px);
+}
+
+.next{
+    grid-area: 1 / 4 / 4 / 5;
+    display: grid;
+    justify-items: right;
+    align-items: center;
+}
+
+.prev{
+    display: grid;
+    align-items: center;
+}
+
+.title{
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+.name{
+    grid-area: 2 / 3 / 3 / 4;
+    font-family: 'Montserrat';   
+}
+
+.description{
+    grid-area: 3 / 3 / 4 / 4;
+    font-family: 'Montserrat';
+}
+
+#prevbut{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: rgb(59, 59, 59);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+#nextbut{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: rgb(59, 59, 59);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+/* div{
+    background-color: black;
+} */
+
+
+
+/* ball */
+
+.circledudes{
+    position: absolute;
+    display: flex;
+}
+
+.circle{
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(160deg, #691386 20%, #0d226d 45%, #12094c 100%);
+    border-radius: 50%;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    animation: bounce 2s;
+    animation-iteration-count: 1;
+}
+
+.subcircle{
+    width: 90%;
+    height: 90%;
+    margin-left: 5%;
+    border-radius: 50%;
+    background: linear-gradient(210deg,#ac5bc7 20%, #0e2472 70%, #000000 100%);
+    filter: blur(5px);
+    z-index: 7;
+}
+
+#ball1{
+    top: 40px;
+    left: 70px;
+    z-index: 7;
+}
+#ball2{
+    top: 80px;
+    left: 820px;
+    z-index: 5;
+}
+#ball3{
+    top:480px;
+    left: 290px;
+    z-index: 6;
+    /*animation: test 2s;
+    animation-iteration-count: 2;
+    animation-fill-mode: forwards;*/
+}
+#ball4{
+    top: 210px;
+    left: 380px;
+    z-index: 8;
+}
+#ball5{
+    top: 537px;
+    left: 550px;
+    z-index: 9;
+}
+
+.photobar{
+    display: flex;
+    flex-direction: row;
+    width: 960px;
+    justify-content: center;
+}
+
+.inphotobar{
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    opacity: 0.25;
+}
+
+.inbarimage{
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+}
+
+#arrowprev1{
+    height: 10%;
+    width: 50%;
+    border-radius: 30%;
+    background-color: white;
+    left: 20%;
+    top: 60%;
+    transform: rotate(45deg);
+}
+
+#arrowprev2{
+    height: 10%;
+    width: 50%;
+    border-radius: 30%;
+    background-color: white;
+    left: 20%;
+    top: 20%;
+    transform: rotate(135deg);
+}
+
+#arrownext1{
+    height: 10%;
+    width: 50%;
+    border-radius: 30%;
+    background-color: white;
+    left: 25%;
+    top: 30%;
+    transform: rotate(225deg);
+}
+
+#arrownext2{
+    height: 10%;
+    width: 50%;
+    border-radius: 30%;
+    background-color: white;
+    left: 25%;
+    top: 50%;
+    transform: rotate(315deg);
+}
+
+/*@keyframes test{
+    0%{
+
+    }
+    30%{
+        transform: translate(-50px, -50px);
+    }
+    35%{
+        transform: translate(-51px, -51px);
+    }
+    100%{
+        transform: translate(-51px, -51px);
+    }
+}*/
+
+/*@keyframes bounce{
+    0%{
+        width: 38px;
+        height: 37px;
+    }
+    30%{
+        width: 39px;
+        height: 39px;
+        transform: translateY(-100px);
+    }
+    35%{
+        width: 39px;
+        height: 39px;
+        transform: translateY(-95px);
+    }
+    40%{
+        width: 39px;
+        height: 39px;
+        transform: translateY(-87px);
+    }
+    45%{
+        width: 39px;
+        height: 39px;
+        transform: translateY(-76px);
+    }
+    50%{
+        width: 39px;
+        height: 39px;
+        transform: translateY(-57px);
+    }
+    55%{
+        width: 39px;
+        height: 39px;
+        transform: translateY(-34px);
+    }
+    60%{
+        width: 39px;
+        height: 39px;
+        transform: translateY(-0px);
+    }
+}*/
