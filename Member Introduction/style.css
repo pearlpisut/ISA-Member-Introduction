@@ -1,28 +1,10 @@
-/**{
-    padding: 0;
-    margin: 0;
-}
-body{
-    background-color: #808080;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.circle-outter{
-    width: 400px;
-    height: 400px;
-    margin-top: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-}*/
 *{
     position: relative;
 }
 
-body{
-    max-width: 960px;
+#allContent{
+    max-width: 900px;
+    margin: 0px auto;
 }
 
 .grid-container{
@@ -92,13 +74,15 @@ body{
 
 #image{
     z-index: 3;
-    margin-left: -8px;
+    /* margin-left: -8px; */
     width: 100%;
     height: 85%;
     object-fit: cover;
     margin-top: 15px;
-    object-position: 54% 50%;
-    border: 8px solid white;
+    /* object-position: 54% 50%; */
+    padding: 11px;
+    background-clip: content-box;
+    box-shadow: inset 0 0 10px 10px white;
 }
 #fullname{
     font-weight: 800;
@@ -192,11 +176,6 @@ body{
     align-items: center;
 }
 
-/* div{
-    background-color: black;
-} */
-
-
 
 /* ball */
 
@@ -230,21 +209,18 @@ body{
 
 #ball1{
     top: 40px;
-    left: 70px;
+    left: 64px;
     z-index: 7;
 }
 #ball2{
     top: 80px;
-    left: 820px;
+    left: 830px;
     z-index: 5;
 }
 #ball3{
     top:480px;
     left: 290px;
     z-index: 6;
-    /*animation: test 2s;
-    animation-iteration-count: 2;
-    animation-fill-mode: forwards;*/
 }
 #ball4{
     top: 210px;
@@ -317,60 +293,3 @@ body{
     top: 50%;
     transform: rotate(315deg);
 }
-
-/*@keyframes test{
-    0%{
-
-    }
-    30%{
-        transform: translate(-50px, -50px);
-    }
-    35%{
-        transform: translate(-51px, -51px);
-    }
-    100%{
-        transform: translate(-51px, -51px);
-    }
-}*/
-
-/*@keyframes bounce{
-    0%{
-        width: 38px;
-        height: 37px;
-    }
-    30%{
-        width: 39px;
-        height: 39px;
-        transform: translateY(-100px);
-    }
-    35%{
-        width: 39px;
-        height: 39px;
-        transform: translateY(-95px);
-    }
-    40%{
-        width: 39px;
-        height: 39px;
-        transform: translateY(-87px);
-    }
-    45%{
-        width: 39px;
-        height: 39px;
-        transform: translateY(-76px);
-    }
-    50%{
-        width: 39px;
-        height: 39px;
-        transform: translateY(-57px);
-    }
-    55%{
-        width: 39px;
-        height: 39px;
-        transform: translateY(-34px);
-    }
-    60%{
-        width: 39px;
-        height: 39px;
-        transform: translateY(-0px);
-    }
-}*/

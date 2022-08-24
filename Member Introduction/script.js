@@ -97,7 +97,6 @@ function show(){
     document.getElementById("nextbut").style.display = "block";
     if(index==1)
         document.getElementById("prevbut").style.display = "none";
-
     if(index==8)
         document.getElementById("nextbut").style.display = "none";
 
@@ -152,7 +151,6 @@ function findTouchedDrction(ballposX, ballposY, mouseposX, mouseposY){
 }
 
 function moveit(i, direction){
-    //ใว้มาทำต่อ  ดูvideoของbeau fcc
     let selectedball = ball[i];
     let pos = 0;
     let id = setInterval(frame, 30);
@@ -174,9 +172,6 @@ function moveit(i, direction){
             }
             else if(direction==3)
                 additionY*=-1;
-            /*if(ballposX<=20 || ballposX>=900 || ballposY<=20 || ballposY>=650){
-                skip = true;
-            }*/
             ballposX += additionX;
             ballposY += additionY;
             selectedball.style.top = ballposY + 'px';
@@ -184,10 +179,8 @@ function moveit(i, direction){
         }
     }
 }
-let stop = false;
-let outchecker = [];
+
 function collision (i, event){
-        //if(!stop/* && !(i in outchecker)*/){
         ballposX = window.getComputedStyle(ball[i], null).getPropertyValue("left");
         ballposY = window.getComputedStyle(ball[i], null).getPropertyValue("top");
         ballposX = Number(ballposX.slice(0, -2)) + 25 +40*i;
@@ -197,17 +190,11 @@ function collision (i, event){
         console.log("ball number ", i, " mouse pos ", mouseposX, mouseposY);
         console.log("ball number ", i, " ball pos ", ballposX, ballposY);
         let direction = findTouchedDrction(ballposX, ballposY, mouseposX, mouseposY);
-        //if(direction == -1)
-            //return;
         //console.log("direction is ", direction);
         moveit(i, direction);
-        //}
         if(ballposX<=20 || ballposX>=950 || ballposY<=20 || ballposY>=600){
-            //stop=true;
             ball[i].style.opacity = "0";
-            //outchecker.push(i);
         }
-        //stop=false;
 }
 
 function photobarshow(i){
@@ -215,10 +202,11 @@ function photobarshow(i){
     show();
 }
 
+
+// add src file to each img in image bar
 let imagesinbar = document.getElementsByClassName("inbarimage");
 for(let i=0; i<imagesinbar.length; i++){
     var attr = document.createAttribute("src");
-    //attr.value="";
     imagesinbar[i].setAttributeNode(attr);
     imagesinbar[i].setAttribute("src", memberInfo[i+1].positionphoto);
 }
@@ -226,75 +214,3 @@ let photobar = document.getElementsByClassName("inphotobar");
 for(let i=0; i<photobar.length; i++){
     photobar[i].onclick = function(){photobarshow(i+1)};
 }
-
-/*function repel(){
-    let posX, posY;
-    window.addEventListener('mousemove', function(e){
-        let which = findTouchedBall(e.x, e.y);
-    })
-}
-
-
-for(let i of ball){
-    i.onmousemove = function(){
-        repel();
-    };
-} 555*/
-
-
-//document.getElementById("yo").online = function() {show()};
-
-/*function getCoor(){
-    let posX, posY;
-    window.addEventListener('mousemove', function(e){
-        posX = e.x;
-        posY = e.y;
-    });
-    console.log("pos X = ", posX);
-    return [posX, posY];
-}*/
-
-/*let checkk;
-
-function repel(){
-    if(checkk){
-        let posX, posY;
-        window.addEventListener('mousemove', function(e){
-            console.log(e.x);
-            //posX = e.x;
-            //posY = e.y;
-        });
-    }
-    else{ 
-        window.removeEventListener('mousemove', function(e){
-            console.log(e.x);
-        }); 
-    }
-    //console.log(posX, posY);
-}
-
-function stop(){
-    checkk = false;
-    console.log(99);
-    window.removeEventListener('mousemove', function(e){
-        console.log(e.x);
-    });
-}
-
-//repel();
-
-document.getElementById("tt").onmousemove = function() {
-    checkk = true;
-    console.log(55);
-    //repel();
-    window.addEventListener('mousemove', function(e){
-        console.log(e.x);
-        //posX = e.x;
-        //posY = e.y;
-    });
-};
-document.getElementById("tt").onmouseout = function() {
-    window.removeEventListener('mousemove', function(e){
-        console.log(e.x);
-    });
-};*/
