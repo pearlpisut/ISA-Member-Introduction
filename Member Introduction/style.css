@@ -2,10 +2,10 @@
     position: relative;
 }
 
-#allContent{
+/* #allContent{
     max-width: 900px;
     margin: 0px auto;
-}
+} */
 
 .grid-container{
     display: grid;
